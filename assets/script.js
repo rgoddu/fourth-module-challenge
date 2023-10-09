@@ -21,24 +21,31 @@ function previousQuestion() {
     //pulls prompt and options from associated objects
 
     //else if the counter is 1:
-    // calls firstQuestion function
+    //calls firstQuestion function
 
 }
 
 
 function startQuiz() {
     //when start button is pressed:
+
+    //removes start button element
     //creates question prompt
     //creates four option buttons
     //creates next button
-    //removes start button element
     // starts timer, queues first question, adds one to counter
 }
 
-function questionOne() {
-    //queues the first question
-    //on click event, 
-}
-function questionTwo() {
+function firstQuestion() {
 
+// previous question button is removed
+}
+function lastQuestion() {
+    // next question button is turned into submit button
+
+}
+function submitQuiz(){
+    //removes all card elements
+    //stops timer
+    //loops to compares student answer object with correct answer object
 }
