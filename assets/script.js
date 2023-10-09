@@ -57,16 +57,16 @@ function submitQuiz(){
 }
 
 //questions:
-which dinosaur is best?
-triceratops
-t-Rex
-pterodactyl
-brontosaurus
+// which dinosaur is best?
+// triceratops
+// t-Rex
+// pterodactyl
+// brontosaurus
 
-which dinosaur food is the most yummy?
-water
-leaves
-tree bark
-other dinosaurs
+// which dinosaur food is the most yummiest?
+// water
+// leaves
+// tree bark
+// other dinosaurs
 
 
