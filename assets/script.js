@@ -133,6 +133,9 @@ function nextQuestion() {
         var nextQButton = document.getElementById("next-button")
         nextQButton.textContent = "SUBMIT"
         // next question button is turned into submit button
+    }else if(questionNumber === quizLength){
+        console.log("submit quiz")
+        submitQuiz()
     }
 }
 function previousQuestion() {
@@ -144,6 +147,11 @@ function previousQuestion() {
         loadQuestion()
         prevQButton = document.getElementById("previous-button")
         prevQButton.remove()
+    }else if(questionNumber>2){
+        var nextQButton = document.getElementById("next-button")
+        nextQButton.textContent = "NEXT"
+        questionNumber--
+        loadQuestion()
     }
 
     //if counter is >1:
@@ -158,6 +166,11 @@ function previousQuestion() {
 
 
 function submitQuiz() {
+    navigatorArea.remove()
+    quizCard.remove()
+    var scoreCard = document.createElement("card")
+    scoreCard.textContent = "Your score is: YOU FUCKING SUCK"
+    document.children[0].append(scoreCard)
     //removes all card elements
     //stops timer
     //loops to compares student answer object with correct answer object
