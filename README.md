@@ -1,4 +1,8 @@
+I did not read the instruction too carefully, so I created a quiz with "next" and "previous" buttons - 
 
+It was quite a bit of extra work and allowing the user to navigate backwords doesn't really support the function of subtracting time from the clock in any sensible manner.
+
+Functionality for saving the student score is still in works.
 
 AS A coding boot camp student
 I WANT to take a timed quiz on JavaScript fundamentals that stores high scores

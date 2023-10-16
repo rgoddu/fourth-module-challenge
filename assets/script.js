@@ -175,8 +175,26 @@ function startQuiz() {
         quizCard.remove()
         checkScore()
         var scoreCard = document.createElement("card")
+        scoreCard.setAttribute("id", "scorecard")
         scoreCard.textContent = "Your score is: " + studentScore + "/" + quizLength
         document.children[0].append(scoreCard)
+        storeScoreQuestion()
+        }
+    function storeScoreQuestion(){
+        var scoreStore = document.createElement("card")
+        var userName = document.createElement("input")
+        userName.setAttribute("placeholder", "enter username")
+        var userNameInput = userName.value
+        var saveScore = document.createElement("button")
+        saveScore.textContent = "save score"
+        saveScore.addEventListener("click", storeScore)
+        scoreStore.append(userName)
+        scoreStore.append(saveScore)
+        document.getElementById("scorecard").append(scoreStore)
+    function storeScore(){
+        // localStorage.setItem
+        console.log(userNameInput)
+    }
     }
 }
 
