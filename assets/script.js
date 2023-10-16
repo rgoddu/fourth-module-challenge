@@ -1,6 +1,7 @@
 
 var questionNumber = 1
 var quizLength = 3
+var studentScore = 0
 var quizCard = document.getElementById("quiz-container")
 var navigatorArea = document.getElementById("navigator")
 class quizTemplate {
@@ -35,10 +36,7 @@ var quizOptions = {
     q3o4: "ichthyornis"
 }
 var studentAnswers = {
-
 }
-
-//creates object with student answers
 function init() {
     var startButton = document.createElement("button")
     startButton.setAttribute("id", "startQuizButton")
@@ -47,7 +45,6 @@ function init() {
     startButton.addEventListener("click", startQuiz)
 }
 init()
-
 function createQuestionPrompt() {
     var questionPrompt = document.createElement("h1")
     questionPrompt.setAttribute("id", "questionPrompt")
@@ -114,15 +111,11 @@ function selectAnswer() {
     })
 }
 function nextQuestion() {
-    console.log("trip#2")
     //saves student answer object to local storage
-
     if (questionNumber === 1) {
         questionNumber++
         loadQuestion()
         createPreviousButton()
-
-        console.log("triphere aosidf")
     } else if ((1 < questionNumber) && (questionNumber < (quizLength-1))) {
         questionNumber++
         loadQuestion()
@@ -132,7 +125,6 @@ function nextQuestion() {
         loadQuestion()
         var nextQButton = document.getElementById("next-button")
         nextQButton.textContent = "SUBMIT"
-        // next question button is turned into submit button
     }else if(questionNumber === quizLength){
         console.log("submit quiz")
         submitQuiz()
@@ -141,7 +133,6 @@ function nextQuestion() {
 function previousQuestion() {
     //on selection of the previous button:
     //saves student answer object to local storage+
-    
     if (questionNumber === 2) {
         questionNumber-- 
         loadQuestion()
@@ -153,28 +144,27 @@ function previousQuestion() {
         questionNumber--
         loadQuestion()
     }
-
-    //if counter is >1:
-    //removes 1 from counter variable
-    //pulls prompt and options from associated objects
-
-    //else if the counter is 1:
-
-
 }
 
-
+function checkScore(){
+    for(var scoreQuestion = 1; scoreQuestion <= quizLength; scoreQuestion++){
+        var correctAnswer = answerKey["question" + scoreQuestion + "Answer"]
+        var givenAnswer = studentAnswers[scoreQuestion]
+        console.log(correctAnswer)
+        console.log(givenAnswer)
+if(correctAnswer === givenAnswer){
+    studentScore++;
+    }
+}}
 
 function submitQuiz() {
     navigatorArea.remove()
     quizCard.remove()
+    checkScore()
     var scoreCard = document.createElement("card")
-    scoreCard.textContent = "Your score is: YOU FUCKING SUCK"
+    scoreCard.textContent = "Your score is: " + studentScore + "/" + quizLength
     document.children[0].append(scoreCard)
-    //removes all card elements
     //stops timer
-    //loops to compares student answer object with correct answer object
-    //returns score
 }
 
 
